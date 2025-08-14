@@ -57,7 +57,7 @@ streamlit run app.py
 🌐 Abre tu navegador en http://localhost:xxxx
 
 ### 🐳 Instalación con Docker
-Opción A: Usar Ollama desde tu máquina (host)
+Usar Ollama desde tu máquina (host)
 ```bash
 docker-compose build
 docker-compose up
@@ -90,7 +90,7 @@ services:
 docker-compose build
 docker-compose up
 ```
-### 🌐 La aplicación estará disponible en http://localhost:8501
+### 🌐 La aplicación estará disponible en http://localhost:xxx
 
 🧠 Cómo Funciona
 📄 Subida de documentos (PDF, DOCX, TXT)
