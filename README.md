@@ -20,7 +20,7 @@ Antes de comenzar, asegúrate de contar con:
 
 ### 1️⃣ Instalación Manual con Python y Entorno Virtual
 ```bash
-git clone https://github.com/tuusuario/Local-RAG-KG-Chatbot.git
+git clone 
 cd Local-RAG-KG-Chatbot
 
 # Crear entorno virtual
@@ -42,7 +42,7 @@ Descarga e instala Ollama → https://ollama.com/
 
 Descarga los modelos necesarios:
 
-bash
+```bash
 Copiar
 Editar
 ollama pull deepseek-r1:7b
@@ -58,7 +58,7 @@ Abre tu navegador en http://localhost:xxxx para interactuar con el asistente.
 
 🐳 Instalación con Docker
 Opción A: Usar Ollama desde tu máquina (host)
-bash
+```bash
 Copiar
 Editar
 docker-compose build
