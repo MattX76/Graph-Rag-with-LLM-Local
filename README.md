@@ -38,37 +38,32 @@ pip install --upgrade pip
 
 # Instalar dependencias
 pip install -r requirements.txt
-2️⃣ Configuración de Ollama
+```
+### 2️⃣ Configuración de Ollama
 Descargar e instalar Ollama → https://ollama.com/
 
 Descargar modelos necesarios:
-
-bash
-Copiar
-Editar
+```bash
 ollama pull deepseek-r1:7b
 ollama pull nomic-embed-text
+```
 🔧 Nota: Para otros modelos, modifica MODEL o EMBEDDINGS_MODEL en .env.
 
-3️⃣ Ejecución de la Aplicación
-bash
-Copiar
-Editar
+### 3️⃣ Ejecución de la Aplicación
+```bash
 ollama serve
 streamlit run app.py
+```
 🌐 Abre tu navegador en http://localhost:xxxx
 
-🐳 Instalación con Docker
+### 🐳 Instalación con Docker
 Opción A: Usar Ollama desde tu máquina (host)
-bash
-Copiar
-Editar
+```bash
 docker-compose build
 docker-compose up
 Opción B: Todo en contenedores (Ollama + Chatbot)
-yaml
-Copiar
-Editar
+```
+```yaml
 version: "3.8"
 
 services:
@@ -90,12 +85,12 @@ services:
       - CROSS_ENCODER_MODEL=cross-encoder/ms-marco-MiniLM-L-6-v2
     depends_on:
       - ollama
-bash
-Copiar
-Editar
+```
+```bash
 docker-compose build
 docker-compose up
-🌐 La aplicación estará disponible en http://localhost:8501
+```
+### 🌐 La aplicación estará disponible en http://localhost:8501
 
 🧠 Cómo Funciona
 📄 Subida de documentos (PDF, DOCX, TXT)
