@@ -8,63 +8,63 @@ Soporta la carga de archivos PDF, DOCX y TXT, procesando la información sin dep
 
 ## 🔧 Requisitos Previos
 
-Antes de comenzar, asegúrate de contar con:
-- **Python 3.10+** instalado en tu sistema.
-- **pip** actualizado.
-- **Ollama** instalado para la gestión de modelos locales.
-- (Opcional) **Docker** si prefieres una implementación en contenedores.
+Antes de empezar, asegúrate de tener:  
+
+- 🐍 **Python 3.10+**  
+- 📦 **pip** actualizado  
+- 🤖 **Ollama** para la gestión de modelos locales  
+- 🐳 (Opcional) **Docker** para contenedores  
 
 ---
 
 ## 🛠 Instalación Paso a Paso
 
 ### 1️⃣ Instalación Manual con Python y Entorno Virtual
+
 ```bash
-git clone 
-cd Local-RAG-KG-Chatbot
+git clone https://github.com/MattX76/Graph-Rag-with-LLM-Local
 
 # Crear entorno virtual
 python -m venv venv
 
 # Activar entorno
-# En Windows:
+# Windows:
 venv\Scripts\activate
-# En macOS/Linux:
+# macOS/Linux:
 source venv/bin/activate
 
-# (Opcional) Actualizar pip
+# Actualizar pip (opcional)
 pip install --upgrade pip
 
 # Instalar dependencias
 pip install -r requirements.txt
 2️⃣ Configuración de Ollama
-Descarga e instala Ollama → https://ollama.com/
+Descargar e instalar Ollama → https://ollama.com/
 
-Descarga los modelos necesarios:
+Descargar modelos necesarios:
 
-```bash
+bash
 Copiar
 Editar
 ollama pull deepseek-r1:7b
 ollama pull nomic-embed-text
-Si quieres utilizar otros modelos, modifica las variables MODEL o EMBEDDINGS_MODEL en el archivo .env.
+🔧 Nota: Para otros modelos, modifica MODEL o EMBEDDINGS_MODEL en .env.
 
-### 3️⃣ Ejecución de la Aplicación
-```bash
+3️⃣ Ejecución de la Aplicación
+bash
+Copiar
+Editar
 ollama serve
 streamlit run app.py
-```
-Abre tu navegador en http://localhost:xxxx para interactuar con el asistente.
+🌐 Abre tu navegador en http://localhost:xxxx
 
 🐳 Instalación con Docker
 Opción A: Usar Ollama desde tu máquina (host)
-```bash
+bash
 Copiar
 Editar
 docker-compose build
 docker-compose up
-La aplicación se abrirá en http://localhost:8501.
-
 Opción B: Todo en contenedores (Ollama + Chatbot)
 yaml
 Copiar
@@ -90,21 +90,24 @@ services:
       - CROSS_ENCODER_MODEL=cross-encoder/ms-marco-MiniLM-L-6-v2
     depends_on:
       - ollama
-Luego ejecuta:
-
+bash
+Copiar
+Editar
 docker-compose build
 docker-compose up
+🌐 La aplicación estará disponible en http://localhost:8501
+
 🧠 Cómo Funciona
-Sube tus documentos (PDF, DOCX, TXT).
+📄 Subida de documentos (PDF, DOCX, TXT)
 
-Recuperación híbrida: BM25 y FAISS localizan los fragmentos más relevantes.
+🔍 Recuperación híbrida: BM25 + FAISS localizan fragmentos relevantes
 
-GraphRAG: crea un grafo de conocimiento para entender relaciones y contexto.
+🧩 GraphRAG: crea un grafo de conocimiento para entender contexto y relaciones
 
-Reordenamiento neuronal con Cross-Encoder para priorizar resultados.
+🧠 Reordenamiento neuronal con Cross-Encoder
 
-Expansión de consultas (HyDE) para mejorar la precisión.
+💡 Expansión de consultas (HyDE) para mayor precisión
 
-Memoria conversacional para mantener el hilo del diálogo.
+🗂 Memoria conversacional para mantener el hilo del diálogo
 
-Generación final con el modelo seleccionado en Ollama.
+🤖 Generación final con el modelo seleccionado en Ollama
